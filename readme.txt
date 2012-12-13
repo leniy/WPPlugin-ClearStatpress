@@ -1,4 +1,4 @@
-﻿=== Clear-StatPress ===
+=== Clear-StatPress ===
 Contributors: leniy
 Donate link: http://leniy.info/
 Tags: comments,stat,statpress,clear
@@ -25,9 +25,12 @@ Clear-StatPress:Clear statpress spider mysql log data
 == Screenshots ==
 
 1. screenshot-1.png
+2. screenshot-2.png
 
 == Changelog ==
 
+=0.0.3=
+2012.12.13 优化查询语句的变量，减少代码量；修改table的css样式，防止窗口调整大小后无法全部显示
 =0.0.2=
 2012.12.11 对mysql查询函数做了更新，加入其它一些agent的分析
 =0.0.1=
