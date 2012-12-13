@@ -3,7 +3,7 @@ Contributors: leniy
 Donate link: http://leniy.info/
 Tags: comments,stat,statpress,clear
 Requires at least: 3.0.1
-Tested up to: 3.4.2
+Tested up to: 3.5
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
