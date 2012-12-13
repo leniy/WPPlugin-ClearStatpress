@@ -4,7 +4,7 @@ Donate link: http://leniy.info/
 Tags: comments,stat,statpress,clear
 Requires at least: 3.0.1
 Tested up to: 3.4.2
-Stable trunk: 0.0.1
+Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -28,5 +28,15 @@ Clear-StatPress:Clear statpress spider mysql log data
 
 == Changelog ==
 
+=0.0.2=
+2012.12.11 对mysql查询函数做了更新，加入其它一些agent的分析
 =0.0.1=
-First version after start learned how to write a plugin.
+2012.12.11 First version after start learned how to write a plugin.
+
+== Frequently Asked Questions ==
+
+这是statpress的附加功能
+
+== Upgrade Notice ==
+
+需要首先安装statpress
