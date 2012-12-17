@@ -30,17 +30,20 @@ Clear-StatPress:Clear statpress spider mysql log data
 
 == Changelog ==
 
-=1.0=
-Final Release
+= 1.0 =
+* Final Release
 
-=0.0.3=
-2012.12.13 优化查询语句的变量，减少代码量；修改table的css样式，防止窗口调整大小后无法全部显示；对查询的每一行前添加序列号。
+= 0.0.3 =
+* 2012.12.13
+* 优化查询语句的变量，减少代码量；修改table的css样式，防止窗口调整大小后无法全部显示；对查询的每一行前添加序列号。
 
-=0.0.2=
-2012.12.11 对mysql查询函数做了更新，加入其它一些agent的分析
+= 0.0.2 =
+* 2012.12.11
+* 对mysql查询函数做了更新，加入其它一些agent的分析
 
-=0.0.1=
-2012.12.11 First version after start learned how to write a plugin.
+= 0.0.1 =
+* 2012.12.11
+* First version after start learned how to write a plugin.
 
 == Frequently Asked Questions ==
 
