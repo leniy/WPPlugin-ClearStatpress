@@ -1,18 +1,18 @@
 === Clear-StatPress ===
 Contributors: leniy
 Donate link: http://leniy.info/
-Tags: comments,stat,statpress,clear
+Tags: comments,stat,statpress,clear,statpresscn
 Requires at least: 3.0.1
 Tested up to: 3.5
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Clear-StatPress:Clear statpress spider mysql log data
+Clear-StatPress:Clear statpresscn spider mysql log data
 
 == Description ==
 
-我安装的statpress插件，虽然设置了不记录蜘蛛访问记录，但有些不表明身份的蜘蛛的访问数据仍然会保存，严重占用数据库空间。
+我安装的statpresscn插件，虽然设置了不记录蜘蛛访问记录，但有些不表明身份的蜘蛛的访问数据仍然会保存，严重占用数据库空间。
 登陆后台phpmyadmin太麻烦了，刚刚粗略的学习了下插件制作，写了个简单的插件，执行清理作业。
 
 == Installation ==
@@ -30,25 +30,27 @@ Clear-StatPress:Clear statpress spider mysql log data
 
 == Changelog ==
 
+= 1.0.1 =
+* 添加UserAgent包含"spide"的记录检索
+* 添加UserAgent包含"PHP/"的记录检索
+* 对于虽然UA包含http，但同时包含"liferea"的记录，取消检索。因为liferea是一款rss阅读器，不算是蜘蛛机器人
+* Change "statpress" to "statpresscn"
+* 这是statpresscn的插件，不是statpress的。搜索wordpress库发现有插件名为statpress，故修改相关内容，不再省略“cn”字串，防止误解。
+
 = 1.0 =
-* Final Release
-
-= 0.0.3 =
 * 2012.12.13
+* Final Release
 * 优化查询语句的变量，减少代码量；修改table的css样式，防止窗口调整大小后无法全部显示；对查询的每一行前添加序列号。
-
-= 0.0.2 =
-* 2012.12.11
-* 对mysql查询函数做了更新，加入其它一些agent的分析
 
 = 0.0.1 =
 * 2012.12.11
 * First version after start learned how to write a plugin.
+* 对mysql查询函数做了更新，加入其它一些agent的分析
 
 == Frequently Asked Questions ==
 
-这是对statpress的附加功能
+这是对statpresscn的附加功能
 
 == Upgrade Notice ==
 
-安装或升级前，请确保安装了statpress。
+安装或升级前，请确保安装了statpresscn。
