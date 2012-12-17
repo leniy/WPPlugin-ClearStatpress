@@ -31,6 +31,7 @@ Clear-StatPress:Clear statpresscn spider mysql log data
 == Changelog ==
 
 = 1.0.1 =
+* 2012.12.17
 * 添加UserAgent包含"spide"的记录检索
 * 添加UserAgent包含"PHP/"的记录检索
 * 对于虽然UA包含http，但同时包含"liferea"的记录，取消检索。因为liferea是一款rss阅读器，不算是蜘蛛机器人
