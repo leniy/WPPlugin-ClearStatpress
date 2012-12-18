@@ -30,7 +30,13 @@ Clear-StatPress:Clear statpresscn spider mysql log data
 
 == Changelog ==
 
+= 1.0.2 =
+
+* 2012.12.18
+* Fix bug: Miss ")" after "OR ( `agent` LIKE  '%http%' AND `agent` NOT LIKE  '%liferea%'"
+
 = 1.0.1 =
+
 * 2012.12.17
 * 添加UserAgent包含"spide"的记录检索
 * 添加UserAgent包含"PHP/"的记录检索
@@ -39,11 +45,13 @@ Clear-StatPress:Clear statpresscn spider mysql log data
 * 这是statpresscn的插件，不是statpress的。搜索wordpress库发现有插件名为statpress，故修改相关内容，不再省略“cn”字串，防止误解。
 
 = 1.0 =
+
 * 2012.12.13
 * Final Release
 * 优化查询语句的变量，减少代码量；修改table的css样式，防止窗口调整大小后无法全部显示；对查询的每一行前添加序列号。
 
 = 0.0.1 =
+
 * 2012.12.11
 * First version after start learned how to write a plugin.
 * 对mysql查询函数做了更新，加入其它一些agent的分析

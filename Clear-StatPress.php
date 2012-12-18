@@ -51,7 +51,7 @@ OR  `urlrequested` LIKE  '%/2012%'
 OR  `urlrequested` LIKE  '%/2013%'
 OR  `agent` LIKE  '%bot%'
 OR  `agent` LIKE  '%PHP/%'
-OR ( `agent` LIKE  '%http%' AND `agent` NOT LIKE  '%liferea%'
+OR ( `agent` LIKE  '%http%' AND `agent` NOT LIKE  '%liferea%')
 OR  `agent` LIKE  '%spide%'
 OR ( `urlrequested` =  '' AND  `statuscode` =  '' AND  `referrer` =  '')
 OR ( `urlrequested` =  '' AND  `referrer` =  ''  AND  `browser` =  '' AND  `os` =  '')
