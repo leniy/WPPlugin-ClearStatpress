@@ -1,9 +1,9 @@
 <?php
 /*
-	Plugin Name: Clear-StatPress
+	Plugin Name: Clear StatPress CN
 	Plugin URI: http://leniy.info/clear-statpress.html
 	Description: 我安装的statpress插件，虽然设置了不记录蜘蛛访问记录，但有些不表明身份的蜘蛛的访问数据仍然会保存，严重占用数据库空间。登陆后台phpmyadmin太麻烦了，刚刚粗略的学习了下插件制作，写了个简单的插件，执行清理作业。
-	Version: 1.0.2
+	Version: 1.1
 	Author: leniy
 	Author URI: http://leniy.info/
 */
@@ -51,7 +51,7 @@ OR  `urlrequested` LIKE  '%/2012%'
 OR  `urlrequested` LIKE  '%/2013%'
 OR  `agent` LIKE  '%bot%'
 OR  `agent` LIKE  '%PHP/%'
-OR ( `agent` LIKE  '%http%' AND `agent` NOT LIKE  '%liferea%')
+OR ( `agent` LIKE  '%http%' AND `agent` NOT LIKE  '%liferea%' AND `agent` NOT LIKE  '%google%' AND `agent` NOT LIKE  '%sixxs%')
 OR  `agent` LIKE  '%spide%'
 OR ( `urlrequested` =  '' AND  `statuscode` =  '' AND  `referrer` =  '')
 OR ( `urlrequested` =  '' AND  `referrer` =  ''  AND  `browser` =  '' AND  `os` =  '')
@@ -60,7 +60,12 @@ OR ( `urlrequested` =  '' AND  `referrer` =  ''  AND  `browser` =  '' AND  `os` 
 	$query_del = "DELETE  FROM " . $wpdb->prefix . 'statpress '." WHERE " . $query_temp;
 
 	$output = $wpdb->get_results($query_sel);
-	echo "找到如下待删除项目：<br>";
+	echo "
+	<table>
+		<td>找到如下待删除项目：</td>
+		<td><form method=\"post\"><input type=\"submit\" name=\"confirmdel\" value=\"确认删除\" class=\"button-primary\" /></form></td>
+	</table>
+	<br>";
 	echo "<div class=\"datagrid\"><table>
 <!--	<colgroup>
 		<col class=\"colno\" />
@@ -173,9 +178,13 @@ OR ( `urlrequested` =  '' AND  `referrer` =  ''  AND  `browser` =  '' AND  `os` 
 </style>
 <?php
 	//这儿开始执行删除操作
-	$wpdb->query($query_del);
-	echo "<br>删除成功";
-
+	if($_POST['confirmdel'] != "") {
+		$wpdb->query($query_del);
+		echo "<br>删除成功";
+	}
+	else {
+		echo "<br>请确认是否执行删除操作，删除按钮位于页面最顶端";
+	}
 }
 
 ?>

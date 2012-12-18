@@ -1,14 +1,13 @@
-=== Clear-StatPress ===
+=== Clear StatPress CN ===
 Contributors: leniy
-Donate link: http://leniy.info/
 Tags: comments,stat,statpress,clear,statpresscn
-Requires at least: 3.0.1
+Requires at least: 3.0
 Tested up to: 3.5
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Clear-StatPress:Clear statpresscn spider mysql log data
+Clear statpresscn spider mysql log data etc.
 
 == Description ==
 
@@ -30,9 +29,10 @@ Clear-StatPress:Clear statpresscn spider mysql log data
 
 == Changelog ==
 
-= 1.0.2 =
+= 1.1 =
 
 * 2012.12.18
+* 不再直接删除数据库中符合条件的数据。增加确认按钮，由用户确认是否删除。
 * Fix bug: Miss ")" after "OR ( `agent` LIKE  '%http%' AND `agent` NOT LIKE  '%liferea%'"
 
 = 1.0.1 =
