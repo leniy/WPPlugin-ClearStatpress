@@ -25,9 +25,15 @@ Clear statpresscn spider mysql log data etc.
 
 1. screenshot-1.png
 2. screenshot-2.png
-3. screenshot-3.png
 
 == Changelog ==
+
+= 1.2 =
+
+* 2012.12.24
+* 修正sql查询语句，避免由搜索引擎直接跳转到tag等页面时，会被误删的情况。
+* 在页面最下方的“请确认是否执行删除操作，删除按钮位于页面最顶端”，增加跳转链接，点击直接跳转到页面顶端按钮处，方便用户操作。
+* 首先加载css，避免数据较多时页面的美观
 
 = 1.1 =
 
