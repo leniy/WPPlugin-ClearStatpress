@@ -1,5 +1,6 @@
 === Clear StatPress ===
 Contributors: leniy
+Donate link: http://blog.leniy.info/
 Tags: comments,stat,statpress,clear,statpresscn,mysql,sql,clean
 Requires at least: 3.0
 Tested up to: 3.5
@@ -29,20 +30,17 @@ Clear statpress mysql log data etc.
 == Changelog ==
 
 = 1.2 =
-
 * 2012.12.24
 * 修正sql查询语句，避免由搜索引擎直接跳转到tag等页面时，会被误删的情况。
 * 在页面最下方的“请确认是否执行删除操作，删除按钮位于页面最顶端”，增加跳转链接，点击直接跳转到页面顶端按钮处，方便用户操作。
 * 首先加载css，避免数据较多时页面的美观
 
 = 1.1 =
-
 * 2012.12.18
 * 不再直接删除数据库中符合条件的数据。增加确认按钮，由用户确认是否删除。
 * Fix bug: Miss ")" after "OR ( `agent` LIKE  '%http%' AND `agent` NOT LIKE  '%liferea%'"
 
 = 1.0.1 =
-
 * 2012.12.17
 * 添加UserAgent包含"spide"的记录检索
 * 添加UserAgent包含"PHP/"的记录检索
@@ -50,13 +48,11 @@ Clear statpress mysql log data etc.
 * Change "statpress" to "statpresscn"
 
 = 1.0 =
-
 * 2012.12.13
 * Final Release
 * 优化查询语句的变量，减少代码量；修改table的css样式，防止窗口调整大小后无法全部显示；对查询的每一行前添加序列号。
 
 = 0.0.1 =
-
 * 2012.12.11
 * First version after start learned how to write a plugin.
 * 对mysql查询函数做了更新，加入其它一些agent的分析
