@@ -1,17 +1,17 @@
-=== Clear StatPress CN ===
+=== Clear StatPress ===
 Contributors: leniy
-Tags: comments,stat,statpress,clear,statpresscn
+Tags: comments,stat,statpress,clear,statpresscn,mysql,sql,clean
 Requires at least: 3.0
 Tested up to: 3.5
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Clear statpresscn spider mysql log data etc.
+Clear statpress mysql log data etc.
 
 == Description ==
 
-我安装的statpresscn插件，虽然设置了不记录蜘蛛访问记录，但有些不表明身份的蜘蛛的访问数据仍然会保存，严重占用数据库空间。
+我安装的statpress插件，虽然设置了不记录蜘蛛访问记录，但有些不表明身份的蜘蛛的访问数据仍然会保存，严重占用数据库空间。
 登陆后台phpmyadmin太麻烦了，刚刚粗略的学习了下插件制作，写了个简单的插件，执行清理作业。
 
 == Installation ==
@@ -48,7 +48,6 @@ Clear statpresscn spider mysql log data etc.
 * 添加UserAgent包含"PHP/"的记录检索
 * 对于虽然UA包含http，但同时包含"liferea"的记录，取消检索。因为liferea是一款rss阅读器，不算是蜘蛛机器人
 * Change "statpress" to "statpresscn"
-* 这是statpresscn的插件，不是statpress的。搜索wordpress库发现有插件名为statpress，故修改相关内容，不再省略“cn”字串，防止误解。
 
 = 1.0 =
 
@@ -64,8 +63,8 @@ Clear statpresscn spider mysql log data etc.
 
 == Frequently Asked Questions ==
 
-这是对statpresscn的附加功能
+这是对statpress的附加功能
 
 == Upgrade Notice ==
 
-安装或升级前，请确保安装了statpresscn。
+安装或升级前，请确保安装了statpress。
