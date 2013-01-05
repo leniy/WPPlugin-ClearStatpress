@@ -3,7 +3,7 @@
 	Plugin Name: Clear StatPress
 	Plugin URI: http://blog.leniy.info/clear-statpress.html
 	Description: 我安装的statpress插件，虽然设置了不记录蜘蛛访问记录，但有些不表明身份的蜘蛛的访问数据仍然会保存，严重占用数据库空间。登陆后台phpmyadmin太麻烦了，刚刚粗略的学习了下插件制作，写了个简单的插件，执行清理作业。
-	Version: 1.2.2
+	Version: 1.3
 	Author: leniy
 	Author URI: http://blog.leniy.info/
 */
@@ -23,6 +23,11 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
+
+$thisplugin_author = "Leniy";
+$thisplugin_url = "http://blog.leniy.info/clear-statpress.html";
+$thisplugin_name = "Clear StatPress";
+$thisplugin_version = "1.3";
 
 add_action('admin_menu', 'qw_CSP_menu');
 
@@ -83,80 +88,22 @@ function CSP_sql_del() {
 	$output = $wpdb->get_results($query_sel);
 
 //首先加载css样式
-?>
-<style text="text/css">
-.datagrid table {
-	border-collapse: collapse;
-	text-align: left;
-	width: 100%;
-}
-.datagrid {
-	width: 99%;
-/*	overflow-x: scroll；*/
-	font: normal 12px/150% Arial, Helvetica, sans-serif;
-	background: #fff;
-	overflow: hidden;
-	border: 1px solid #006699;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-.datagrid table td, .datagrid table th {
-	padding: 0px 5px;
-}
-.datagrid table thead th {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );
-	background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');
-	background-color:#006699;
-	color:#FFFFFF;
-	font-size: 15px;
-	font-weight: bold;
-	border-left: 1px solid #0070A8;
-}
-.datagrid table thead th:first-child {
-	border: none;
-}
-.datagrid table tbody td {
-	color: #00557F;
-	border-left: 2px solid #E1EEF4;
-	font-size: 12px;font-weight: normal;
-}
-.datagrid table tbody .alt td {
-	background: #E1EEF4;
-	color: #00557F;
-}
-.datagrid table tbody td:first-child {
-	border-left: none;
-}
-.datagrid table tbody tr:last-child td {
-	border-bottom: none;
-}
-/*.colno{width: 100%;};
-.colid{width: 100%;};
-.coldate{width: 100%;};
-.coltime{width: 100%;};
-.colip{width: 100%;};
-.colurlrequested{width: 100%;};
-.colstatuscode{width: 100%;};
-.colagent{width: 100%;};
-.colreferrer{width: 100px;};
-.colsearch{width: 100%;};
-.colnation{width: 100%;};*/
-</style>
-<?php
+echo '<link type="text/css" rel="stylesheet" href="' . plugins_url('clear-statpress/css/leniy_csp.css') . '" />';
 
 //然后开始显示确认删除按钮
+global $thisplugin_author;
+global $thisplugin_url;
 	echo "
 	<table>
 		<td>找到如下待删除项目：</td>
 		<td><form method=\"post\"><input type=\"submit\" name=\"confirmdel\" value=\"确认删除\" class=\"button-primary\" /></form></td>
+		<td>联系作者：<a href=\"" . $thisplugin_url . "\" target=\"_blank\">" . $thisplugin_author . "</a></td>
 	</table>
 	<br>";
 
 //下面是查询到的详细数据
 	echo "<div class=\"datagrid\"><table>
-<!--	<colgroup>
+	<colgroup>
 		<col class=\"colno\" />
 		<col class=\"colid\" />
 		<col class=\"coldate\" />
@@ -169,7 +116,7 @@ function CSP_sql_del() {
 		<col class=\"colsearch\" />
 		<col class=\"colnation\" />
 	</colgroup>
--->	<thead><tr>
+	<thead><tr>
 		<th>No.</th>
 		<th>id</th>
 		<th>date</th>

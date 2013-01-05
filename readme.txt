@@ -29,6 +29,11 @@ Clear statpress mysql log data etc.
 
 == Changelog ==
 
+= 1.3 =
+* 2013.01.05
+* 将css样式移动到单独的文件中
+* 细微调整css样式
+
 = 1.2 =
 * 2012.12.24
 * 修正sql查询语句，避免由搜索引擎直接跳转到tag等页面时，会被误删的情况。
