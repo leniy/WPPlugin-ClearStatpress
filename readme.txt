@@ -29,6 +29,10 @@ Clear statpress mysql log data etc.
 
 == Changelog ==
 
+= 1.3.1 =
+* 2013.01.22
+* 添加UserAgent同时包含"http"和"bsalsa"的记录检索为不删除
+
 = 1.3 =
 * 2013.01.05
 * 将css样式移动到单独的文件中
