@@ -29,6 +29,10 @@ Clear statpress mysql log data etc.
 
 == Changelog ==
 
+= 1.3.3 =
+* 2013.02.26
+* 添加一些ip规则
+
 = 1.3.2 =
 * 2013.01.23
 * 添加一些ip规则
