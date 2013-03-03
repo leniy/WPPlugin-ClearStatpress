@@ -3,7 +3,7 @@
 	Plugin Name: Clear StatPress
 	Plugin URI: http://blog.leniy.info/clear-statpress.html
 	Description: 我安装的statpress插件，虽然设置了不记录蜘蛛访问记录，但有些不表明身份的蜘蛛的访问数据仍然会保存，严重占用数据库空间。登陆后台phpmyadmin太麻烦了，刚刚粗略的学习了下插件制作，写了个简单的插件，执行清理作业。
-	Version: 1.3.3
+	Version: 1.3.4
 	Author: leniy
 	Author URI: http://blog.leniy.info/
 */
@@ -45,6 +45,10 @@ function CSP_sql_del() {
 //下面的是查询规则，及sql语句where后面的部分
 	$query_temp = "
 	`agent` LIKE  '%bot%'
+	OR  `agent` LIKE  '%spide%'
+	OR  `agent` LIKE  '%PHP/%'
+	OR  `agent` LIKE  '%BackLinks%'
+	OR  `agent` LIKE  '%PostLinks%'
 	OR (
 		`search` =  ''
 		AND (
@@ -61,7 +65,6 @@ function CSP_sql_del() {
 		OR  `urlrequested` LIKE  '%/2013%'
 			)
 		)
-	OR  `agent` LIKE  '%PHP/%'
 	OR (
 			`agent` LIKE  '%http%'
 		AND `agent` NOT LIKE  '%liferea%'
@@ -69,7 +72,6 @@ function CSP_sql_del() {
 		AND `agent` NOT LIKE  '%sixxs%'
 		AND `agent` NOT LIKE  '%bsalsa%'
 		)
-	OR  `agent` LIKE  '%spide%'
 	OR (
 			`urlrequested` =  ''
 		AND `statuscode` =  ''
@@ -89,6 +91,9 @@ function CSP_sql_del() {
 	OR `ip` LIKE '204.155.149.26'
 	OR `ip` LIKE '14.17.41.12'
 	OR `ip` LIKE '163.177.71.12'
+	OR `ip` LIKE '117.28.255.42'
+	OR `ip` LIKE '119.179.54.204'
+	OR `ip` LIKE '66.11.12.141'
 ";
 //然后生成查询和删除的完整语句
 	$query_sel = "SELECT* FROM " . $wpdb->prefix . 'statpress '." WHERE " . $query_temp;
