@@ -3,9 +3,10 @@
 	Plugin Name: Clear StatPress
 	Plugin URI: http://blog.leniy.info/clear-statpress.html
 	Description: 我安装的statpress插件，虽然设置了不记录蜘蛛访问记录，但有些不表明身份的蜘蛛的访问数据仍然会保存，严重占用数据库空间。登陆后台phpmyadmin太麻烦了，刚刚粗略的学习了下插件制作，写了个简单的插件，执行清理作业。
-	Version: 1.3.4
+	Version: 1.3.5
 	Author: leniy
 	Author URI: http://blog.leniy.info/
+	Text Domain: leniylang
 */
 
 /*  Copyright 2012 Leniy (m@leniy.info)
@@ -24,11 +25,14 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-function myplugin_init() {
-	$plugin_dir = basename(dirname(__FILE__)) . "/lang";
-	load_plugin_textdomain('leniylang', false, $plugin_dir );
+add_action('plugins_loaded', 'CSP_lang');
+function CSP_lang() {
+	$currentLocale = get_locale();
+	if(!empty($currentLocale)) {
+		$moFile = dirname(__FILE__) . "/lang/" . $currentLocale . ".mo";
+		if(@file_exists($moFile) && is_readable($moFile)) load_textdomain('leniylang', $moFile);
+	}
 }
-add_action('plugins_loaded', 'myplugin_init');
 
 add_action('admin_menu', 'qw_CSP_menu');
 
@@ -110,9 +114,9 @@ global $thisplugin_author;
 global $thisplugin_url;
 	echo "
 	<table>
-		<td>" . __('找到如下待删除项目','leniylang') . "：</td>
-		<td><form method='post'><input type='submit' name='confirmdel' value='" . __('确认删除','leniylang') . "' class='button-primary' /></form></td>
-		<td>" . __('联系作者','leniylang') . "：<a href='http://blog.leniy.info' target='_blank'>Leniy</a></td>
+		<td>" . __('Items to be deleted','leniylang') . "：</td>
+		<td><form method='post'><input type='submit' name='confirmdel' value='" . __('Confirm to delete','leniylang') . "' class='button-primary' /></form></td>
+		<td>" . __('Contact Author','leniylang') . "：<a href='http://blog.leniy.info' target='_blank'>Leniy</a></td>
 	</table>
 	<br>";
 
@@ -171,10 +175,10 @@ global $thisplugin_url;
 	//这儿开始执行删除操作
 	if($_POST['confirmdel'] != "") {
 		$wpdb->query($query_del);
-		echo "<br>" . __('删除成功','leniylang');
+		echo "<br>" . __('Deleted','leniylang');
 	}
 	else {
-		echo "<br>" . __('请确认是否执行删除操作，删除按钮位于页面最顶端','leniylang') . "：<a href='#CSPbutton'>" . __('点击跳转到按钮位置','leniylang') . "</a>";
+		echo "<br>" . __('Please confirm to delete or not','leniylang') . "：<a href='#CSPbutton'>" . __('Jump to DELETE button','leniylang') . "</a>";
 	}
 }
 
