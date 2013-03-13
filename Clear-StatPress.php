@@ -24,10 +24,11 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-$thisplugin_author = "Leniy";
-$thisplugin_url = "http://blog.leniy.info/clear-statpress.html";
-$thisplugin_name = "Clear StatPress";
-$thisplugin_version = "1.3";
+function myplugin_init() {
+	$plugin_dir = basename(dirname(__FILE__)) . "/lang";
+	load_plugin_textdomain('leniylang', false, $plugin_dir );
+}
+add_action('plugins_loaded', 'myplugin_init');
 
 add_action('admin_menu', 'qw_CSP_menu');
 
@@ -36,7 +37,7 @@ function qw_CSP_menu() {
 }
 
 function qw_CSP_page() {
-	echo "<div id=\"CSPbutton\"></div><h2>Clear-StatPress</h2>";
+	echo "<div id='CSPbutton'></div><h2>Clear-StatPress</h2>";
 	CSP_sql_del();
 }
 
@@ -109,9 +110,9 @@ global $thisplugin_author;
 global $thisplugin_url;
 	echo "
 	<table>
-		<td>找到如下待删除项目：</td>
-		<td><form method=\"post\"><input type=\"submit\" name=\"confirmdel\" value=\"确认删除\" class=\"button-primary\" /></form></td>
-		<td>联系作者：<a href=\"" . $thisplugin_url . "\" target=\"_blank\">" . $thisplugin_author . "</a></td>
+		<td>" . __('找到如下待删除项目','leniylang') . "：</td>
+		<td><form method='post'><input type='submit' name='confirmdel' value='" . __('确认删除','leniylang') . "' class='button-primary' /></form></td>
+		<td>" . __('联系作者','leniylang') . "：<a href='http://blog.leniy.info' target='_blank'>Leniy</a></td>
 	</table>
 	<br>";
 
@@ -170,10 +171,10 @@ global $thisplugin_url;
 	//这儿开始执行删除操作
 	if($_POST['confirmdel'] != "") {
 		$wpdb->query($query_del);
-		echo "<br>删除成功";
+		echo "<br>" . __('删除成功','leniylang');
 	}
 	else {
-		echo "<br>请确认是否执行删除操作，删除按钮位于页面最顶端：<a href=\"#CSPbutton\">点击跳转到按钮位置</a>";
+		echo "<br>" . __('请确认是否执行删除操作，删除按钮位于页面最顶端','leniylang') . "：<a href='#CSPbutton'>" . __('点击跳转到按钮位置','leniylang') . "</a>";
 	}
 }
 

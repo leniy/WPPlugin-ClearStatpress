@@ -27,7 +27,6 @@ Clear StatPress or StatPressCN mysql log data etc.
 == Screenshots ==
 
 1. screenshot-1.png
-2. screenshot-2.png
 
 == Changelog ==
 
