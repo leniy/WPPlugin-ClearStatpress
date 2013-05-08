@@ -1,15 +1,15 @@
 <?php
 /*
 	Plugin Name: Clear StatPress
-	Plugin URI: http://blog.leniy.info/clear-statpress.html
+	Plugin URI: http://blog.leniy.org/clear-statpress.html
 	Description: 我安装的statpress插件，虽然设置了不记录蜘蛛访问记录，但有些不表明身份的蜘蛛的访问数据仍然会保存，严重占用数据库空间。登陆后台phpmyadmin太麻烦了，刚刚粗略的学习了下插件制作，写了个简单的插件，执行清理作业。
-	Version: 1.3.5
+	Version: 1.3.6
 	Author: leniy
-	Author URI: http://blog.leniy.info/
+	Author URI: http://blog.leniy.org/
 	Text Domain: leniylang
 */
 
-/*  Copyright 2012 Leniy (m@leniy.info)
+/*  Copyright 2012 Leniy (m@leniy.org)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -116,7 +116,7 @@ global $thisplugin_url;
 	<table>
 		<td>" . __('Items to be deleted','leniylang') . "：</td>
 		<td><form method='post'><input type='submit' name='confirmdel' value='" . __('Confirm to delete','leniylang') . "' class='button-primary' /></form></td>
-		<td>" . __('Contact Author','leniylang') . "：<a href='http://blog.leniy.info' target='_blank'>Leniy</a></td>
+		<td>" . __('Contact Author','leniylang') . "：<a href='http://blog.leniy.org' target='_blank'>Leniy</a></td>
 	</table>
 	<br>";
 
