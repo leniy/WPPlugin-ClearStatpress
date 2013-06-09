@@ -3,7 +3,7 @@
 	Plugin Name: Clear StatPress
 	Plugin URI: http://blog.leniy.org/clear-statpress.html
 	Description: 我安装的statpress插件，虽然设置了不记录蜘蛛访问记录，但有些不表明身份的蜘蛛的访问数据仍然会保存，严重占用数据库空间。登陆后台phpmyadmin太麻烦了，刚刚粗略的学习了下插件制作，写了个简单的插件，执行清理作业。
-	Version: 1.3.6
+	Version: 1.3.7
 	Author: leniy
 	Author URI: http://blog.leniy.org/
 	Text Domain: leniylang
@@ -76,6 +76,7 @@ function CSP_sql_del() {
 		AND `agent` NOT LIKE  '%google%'
 		AND `agent` NOT LIKE  '%sixxs%'
 		AND `agent` NOT LIKE  '%bsalsa%'
+		AND `agent` NOT LIKE  '%feedsky%'
 		)
 	OR (
 			`urlrequested` =  ''
@@ -99,6 +100,10 @@ function CSP_sql_del() {
 	OR `ip` LIKE '117.28.255.42'
 	OR `ip` LIKE '119.179.54.204'
 	OR `ip` LIKE '66.11.12.141'
+	OR `ip` LIKE '72.233.72.139'
+	OR `ip` LIKE '173.44.37.%'
+	OR `ip` LIKE '96.47.224.%'
+	OR `ip` LIKE '96.47.225.%'
 ";
 //然后生成查询和删除的完整语句
 	$query_sel = "SELECT* FROM " . $wpdb->prefix . 'statpress '." WHERE " . $query_temp;
