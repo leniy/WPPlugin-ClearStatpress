@@ -68,6 +68,7 @@ function CSP_sql_del() {
 		OR  `urlrequested` LIKE  '%/2011%'
 		OR  `urlrequested` LIKE  '%/2012%'
 		OR  `urlrequested` LIKE  '%/2013%'
+		OR  `urlrequested` LIKE  '%replytocom=%'
 			)
 		)
 	OR (
