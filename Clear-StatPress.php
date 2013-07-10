@@ -105,6 +105,7 @@ function CSP_sql_del() {
 	OR `ip` LIKE '173.44.37.%'
 	OR `ip` LIKE '96.47.224.%'
 	OR `ip` LIKE '96.47.225.%'
+	OR `ip` LIKE '220.181.51.%'
 ";
 //然后生成查询和删除的完整语句
 	$query_sel = "SELECT* FROM " . $wpdb->prefix . 'statpress '." WHERE " . $query_temp;
