@@ -3,7 +3,7 @@ Contributors: leniy
 Donate link: http://blog.leniy.org
 Tags: comments,stat,statpress,clear,statpresscn,mysql,sql,clean
 Requires at least: 3.0
-Tested up to: 3.5
+Tested up to: 3.7
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
