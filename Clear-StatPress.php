@@ -3,28 +3,20 @@
 	Plugin Name: Clear StatPress
 	Plugin URI: http://blog.leniy.org/clear-statpress.html
 	Description: 我安装的statpress插件，虽然设置了不记录蜘蛛访问记录，但有些不表明身份的蜘蛛的访问数据仍然会保存，严重占用数据库空间。登陆后台phpmyadmin太麻烦了，刚刚粗略的学习了下插件制作，写了个简单的插件，执行清理作业。
-	Version: 1.3.15
+	Version: 1.4.0
 	Author: leniy
 	Author URI: http://blog.leniy.org/
 	Text Domain: leniylang
 */
 
-/*  Copyright 2013 Leniy (m@leniy.org)
+//菜单栏目设置
+require_once(plugin_dir_path( __FILE__ ).'/inc/leniy_admin_menu.php');
+function qw_CSP_menu() {
+	add_submenu_page('leniy-plugins', 'Clear StatPress', 'Clear StatPress', 'manage_options', 'leniy-plugins/Clear-StatPress.php', 'qw_CSP_page');
+}
+add_action('admin_menu', 'qw_CSP_menu');
 
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
-    published by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
+//语言本地化
 add_action('plugins_loaded', 'CSP_lang');
 function CSP_lang() {
 	$currentLocale = get_locale();
@@ -34,16 +26,12 @@ function CSP_lang() {
 	}
 }
 
-add_action('admin_menu', 'qw_CSP_menu');
-
-function qw_CSP_menu() {
-	add_options_page('Clear-StatPress', 'Clear-StatPress', 'administrator', 'Clear-StatPress.php', 'qw_CSP_page');
-}
-
+//菜单页设置
 function qw_CSP_page() {
 	echo "<div id='CSPbutton'></div><h2>Clear-StatPress</h2>";
 	CSP_sql_del();
 }
+
 
 function CSP_sql_del() {
 	global $wpdb;
