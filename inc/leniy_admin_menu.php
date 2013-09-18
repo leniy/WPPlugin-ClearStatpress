@@ -37,7 +37,7 @@ if (!function_exists('leniy_plugins_admin_menu_page')) {
 			<h3>Leave a Comment</h3>
 			还没加上
 			<h3>About This Plugin</h3>
-				<iframe frameborder="0" src="http://blog.leniy.org/project/wordpress" scrolling="auto" noresize="" width="100%" height="500px"></iframe>
+				<iframe frameborder="0" src="http://blog.leniy.org/project/wordpress" scrolling="auto" noresize="" width="100%" height="400px"></iframe>
 	</div>
 	<?php
 	}
