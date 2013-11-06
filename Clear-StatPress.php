@@ -3,7 +3,7 @@
 	Plugin Name: Clear StatPress
 	Plugin URI: http://blog.leniy.org/clear-statpress.html
 	Description: 我安装的statpress插件，虽然设置了不记录蜘蛛访问记录，但有些不表明身份的蜘蛛的访问数据仍然会保存，严重占用数据库空间。登陆后台phpmyadmin太麻烦了，刚刚粗略的学习了下插件制作，写了个简单的插件，执行清理作业。
-	Version: 1.4.1
+	Version: 1.4.2
 	Author: leniy
 	Author URI: http://blog.leniy.org/
 	Text Domain: leniylang
