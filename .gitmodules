@@ -1,0 +1,3 @@
+[submodule "clear-statpress/inc"]
+	path = clear-statpress/inc
+	url = git@github.com:leniy/WPPlugin-LeniyInc.git
